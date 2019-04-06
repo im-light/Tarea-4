@@ -88,7 +88,7 @@ namespace tarea4
     class Bajista: Musico
     {
         public string bajo;
-        public Bajista (string n, string bajo ):base(n)
+        public Bajista (string n, string bajo):base(n)
         {
             this.bajo = bajo;
         }
