@@ -157,6 +157,7 @@ un metodo abstracto No tiene cuerpo, puede llevar cuando no es abstracto
 
 podriamos modificarlo sus atributos en todas las clases heredadas
 
+
 3. Implementa el programa utilizando interfaces en lugar de herencia.
 ``` c#
 
