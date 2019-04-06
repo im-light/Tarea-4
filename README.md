@@ -46,10 +46,12 @@ namespace tarea4
 }
 ```
 1.1. ¿Qué valores imprimen las lineas (1) y (2) ?
+en la linea (1) 10
+un la linea (2) 10
 
-1.2.  Redefine el método Display en el espacio indicado,
-
-     una vez redefinido el método, ¿qué valores imprimen las lineas (1) y (2) ?.
+1.2.  Redefine el método Display en el espacio indicado, una vez redefinido el método, ¿qué valores imprimen las lineas (1) y (2) ?.
+en la linea (1) 10
+un la linea (2) 15
 
 1.3. ¿Que palabra debes agregar en la linea (public _______ string Display()) al definir A.Display()?
-
+virtual
