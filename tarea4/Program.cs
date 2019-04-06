@@ -1,42 +1,66 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace tarea4
 {
-    class A
+    abstract class Musico
     {
-        public int a;
-        public A()
+        public string nombre;
+        public Musico (string n)
         {
-        a = 10;
+            nombre = n;
         }
+        public abstract void Afina(); 
         public virtual string Display()
         {
-            return a.ToString();
+            return nombre;
         }
     }
-    class B:A
+    class Bajista: Musico
     {
-        public int b;
-        public B():base()
+        public string bajo;
+        public Bajista (string n, string bajo ):base(n)
         {
-            b = 15;
+            this.bajo = bajo;
+        }
+        public override void Afina()
+        {
+            Console.WriteLine("Nombre: {0}, instrumento que afina: {1}",nombre,bajo);
         }
         public override string Display()
+        { 
+            return string.Format("Hola soy {0} y toco el {1}",nombre,bajo);
+        }
+    }
+    class Guitarrista : Musico
+    {
+        public string guitarra;
+        public Guitarrista (string n, string guitarra ):base(n)
         {
-            return b.ToString();
+            this.guitarra = guitarra;
+        }
+        public override void Afina()
+        {
+            Console.WriteLine("Nombre: {0}, instrumento que toca: {1}",nombre,guitarra);
+        }
+        public override string Display()
+        { 
+            return string.Format("Hola soy {0} y toco la {1}",nombre,guitarra);
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            A objA = new A();
-
-            B objB = new B();
-
-            Console.WriteLine(objA.Display()); ////  (1 )
-
-            Console. WriteLine(objB.Display()); ////  ( 2)
+            Bajista b = new Bajista("Flea","Bajo");
+            Guitarrista g = new Guitarrista("Santana","guitarra");
+            List<Musico> musicos = new List<Musico>();
+            musicos.Add(b);
+            musicos.Add(g);
+            musicos.Add(new Guitarrista("Django","Segunda Guitarra"));
+            foreach (Musico mu in musicos)
+            {
+                mu.Afina();
+            }
         }
     }
 }

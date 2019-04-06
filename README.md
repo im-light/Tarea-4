@@ -1,7 +1,7 @@
 # Tarea4
 
 1. Considera el siguiente fragmento de programa:
-```c sharp
+```c#
 using System;
 
 namespace tarea4
@@ -67,114 +67,80 @@ virtual
 
 ---
 2. Considera el siguiente fragmento de programa:
-``` c sharp
+``` c#
 using System;
-
 using System.Collections.Generic;
-
- ________ class Musico
-
+namespace tarea4
+{
+    abstract class Musico
     {
-
-    public string nombre;
-
-    public Musico (string n)
-
+        public string nombre;
+        public Musico (string n)
         {
-
-         nombre = n;
-
+            nombre = n;
         }
-
-   public abstract (A) void Afina();  (B)
-
-   public (C) string Display()
-
-      { 
-
-       return nombre;
-
-      }
-
-   }
-
-class Bajista; Musico
-
-  {
-
-    public string instrumento;
-
-    public Bajista (string n, string i ) ......
-
-    .........
-
-    public _________ Afina()
-
-      {
-
-      ________________
-
-      }
-
- }
-
-class Guitarrista ____________
-
-     {
-
-     public instrumento;
-
-      // Falta el constructor y otras cosas??
-
- 
-
-     }
-
- 
-
-class Program
-
- {
-
-  public static Main()
-
-   {
-
-  Musico musico = new Musico("Django"); (D)
-
-  Bajista b = new Bajista("Flea");
-
-  Guitarrista g = new Guitarrista("Santana");
-
-  List<Musico> musicos = ____________________
-
-  musicos.Add( b);
-
-  musicos.Add(g);
-
- 
-
-  foreach ( _____in musicos______)
-
-        ____________________
-
- // (m as IAfina).Afina()
-
- Console.ReadKey();
-
-  
-
- }
-
+        public abstract void Afina(); 
+        public virtual string Display()
+        {
+            return nombre;
+        }
+    }
+    class Bajista: Musico
+    {
+        public string bajo;
+        public Bajista (string n, string bajo ):base(n)
+        {
+            this.bajo = bajo;
+        }
+        public override void Afina()
+        {
+            Console.WriteLine("Nombre: {0}, instrumento que afina: {1}",nombre,bajo);
+        }
+        public override string Display()
+        { 
+            return string.Format("Hola soy {0} y toco el {1}",nombre,bajo);
+        }
+    }
+    class Guitarrista : Musico
+    {
+        public string guitarra;
+        public Guitarrista (string n, string guitarra ):base(n)
+        {
+            this.guitarra = guitarra;
+        }
+        public override void Afina()
+        {
+            Console.WriteLine("Nombre: {0}, instrumento que toca: {1}",nombre,guitarra);
+        }
+        public override string Display()
+        { 
+            return string.Format("Hola soy {0} y toco la {1}",nombre,guitarra);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Bajista b = new Bajista("Flea","Bajo");
+            Guitarrista g = new Guitarrista("Santana","guitarra");
+            List<Musico> musicos = new List<Musico>();
+            musicos.Add(b);
+            musicos.Add(g);
+            musicos.Add(new Guitarrista("Django","Segunda Guitarra"));
+            foreach (Musico mu in musicos)
+            {
+                mu.Afina();
+            }
+        }
+    }
 }
-
 ```
 2.1. Completa el programa.
 
 ##### 2.2. Hay un error en uno de los puntos (A)(B)(C)(D). ¿Cuál es y por qué?
 
 
-En el punto (D) por que no se puede crear una instancia de una clase abstracta, en este caso de la clase abstracta Musico
+En el punto (D) ya que no se puede crear una instancia de una clase abstracta
 
 ##### 2.3. ¿Qué método se debe implementar obligatoriamente en ambas clases y por qué?
 
@@ -192,7 +158,7 @@ un metodo abstracto No tiene cuerpo, puede llevar cuando no es abstracto
 podriamos modificarlo sus atributos en todas las clases heredadas
 
 3. Implementa el programa utilizando interfaces en lugar de herencia.
-``` c sharp
+``` c#
 
 
 ```
