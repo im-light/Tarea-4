@@ -135,7 +135,7 @@ namespace tarea4
     }
 }
 ```
-2.1. Completa el programa.
+##### 2.1. Completa el programa.
 
 ##### 2.2. Hay un error en uno de los puntos (A)(B)(C)(D). ¿Cuál es y por qué?
 
