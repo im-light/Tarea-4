@@ -63,8 +63,8 @@ un la linea (2) 15
 
 1.3. ¿Que palabra debes agregar en la linea (public _______ string Display()) al definir A.Display()?
 
-
 virtual
+
 ---
 2. Considera el siguiente fragmento de programa:
 ``` c sharp
